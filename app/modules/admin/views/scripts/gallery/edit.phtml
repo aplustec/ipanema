@@ -1,0 +1,50 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Editar &aacute;lbum</div>
+  <div id="albuns2">
+      <form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+    <table width="1019" border="0">
+      <tr>
+        <td height="30" valign="bottom" class="label">T&iacute;tulo do &aacute;lbum</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="titulo"></label>
+          <input name="title" type="text" class="input" id="titulo" value="<?php echo $this->gallery->title; ?>" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">Descri&ccedil;&atilde;o do &aacute;lbum</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="descricao"></label>
+          <textarea name="description" cols="45" rows="5" class="area2" id="descricao"><?php echo $this->gallery->description; ?></textarea> 
+          <em><span class="info"><strong>M&aacute;x 400 caracteres</strong></span></em></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><span class="label">Adicionar imagens</span></td>
+      </tr>
+      <tr>
+        <td><input name="image[]" class="multi" maxlength="12" type="file" id="image1" />
+        <label><em><span class="info">(600 x 400px Arquivo - JPG) <strong>M&aacute;ximo 12 imagens</strong></span></em></label></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Atualizar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>
+ <ul class="album">
+ 	
+ 	<?php foreach($this->photos as $photo) : ?>
+ 	<li>
+        <div id="image-galeria"><a class="fancybox" href="<?php echo $this->baseUrl('uploads/images/gallery/' . $photo->image); ?>" data-fancybox-group="gallery"><img src="<?php echo $this->baseUrl('uploads/images/gallery/' . $photo->image); ?>" width="226" height="150" border="0" /></a></div>
+    	<div id="actions-galeria"><a href="<?php echo $this->baseUrl('/admin/gallery/photo/remove/' . $photo->idphoto); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Excluir" /></a></div>
+    </li>
+ 	<?php endforeach; ?>
+      
+    </ul>
+
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

@@ -1,0 +1,47 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Cursos Gradua&ccedil;&atilde;o</div>
+  <div id="ordenacao">
+
+      <table width="1030" border="0" align="right">
+        <tr>
+          <td width="824"><a href="<?php echo $this->baseUrl('/admin/graduation/new'); ?>" class="anunciante">+ novo curso</a></td>
+          <td width="92">&nbsp;</td>
+          <td width="100"></td>
+          
+        </tr>
+      </table>
+    
+  </div>
+<div id="vitrine3">
+  <table width="653" border="0" cellpadding="7" cellspacing="4">
+    <tr>
+      <td width="538" class="label">&nbsp;</td>
+      <td width="75" class="label">&nbsp;</td>
+    </tr>
+    <tr>
+      <td><span class="label">Curso</span></td>
+      <td><span class="label">A&ccedil;&otilde;es</span></td>
+    </tr>
+    
+    <?php 
+    $ctrl = true;
+    $color = 'bgcolor="#FFFFFF"';
+    foreach($this->courses as $graduation) :
+    	$colored = ($ctrl) ? $color : ''; 
+    ?>
+    <tr <?=$colored;?>>
+    	<td height="45"><h3 class="info"><?php echo $graduation->name; ?></h3></td>
+    	<td><a href="<?php echo $this->baseUrl('/admin/graduation/edit/' . $graduation->idgraduation); ?>"><img src="<?php $this->asset('edit-icon.png','imagens'); ?>" width="20" height="20" border="0" title="Editar" /></a> <a href="<?php echo $this->baseUrl('/admin/graduation/remove/' . $graduation->idgraduation); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Remover" /></a></td>
+    </tr>
+    <?php 
+    	$ctrl = ($ctrl) ? false : true;
+    endforeach;
+    ?>
+    
+  </table>
+</div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

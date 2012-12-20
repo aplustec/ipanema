@@ -1,0 +1,27 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">V&iacute;deos</div>
+  <div id="ordenacao"><a href="<?php echo $this->baseUrl('/admin/video/new'); ?>" class="anunciante"><strong>+ novo v&iacute;deo</strong></a></div>
+<div id="albuns">
+ <ul class="galeria">
+ 	<?php foreach($this->videos as $video) : ?>
+ 	<li>
+        <div id="image-galeria">
+         <?php echo $this->convertIframeDimensions($video->iframe,$this->defaultIframeWidth,$this->defaultIframeHeight,226,150); ?>
+        </div>
+        <div id="detail-galeria"><?php echo $video->title; ?></div>
+        <div id="actions-galeria"><a href="<?php echo $this->baseUrl('/admin/video/edit/' . $video->idvideo); ?>"><img src="<?php $this->asset('edit-icon.png','imagens'); ?>" width="20" height="20" border="0" title="Editar vídeo" /></a><a href="<?php echo $this->baseUrl('/admin/video/remove/' . $video->idvideo); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Excluir vídeo" /></a></div>
+    </li>
+ 	<?php endforeach; ?>
+     
+    </ul>
+
+  </div>
+  <div id="page">
+    <div id="tnt_pagination">
+<span class="disabled_tnt_pagination">Anterior</span><span class="active_tnt_link">1</span><a href="#2">2</a><a href="#3">3</a><a href="#4">4</a><a href="#5">5</a><a href="#6">6</a><a href="#7">7</a><a href="#8">8</a><a href="#forwaed">Próximo</a></div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

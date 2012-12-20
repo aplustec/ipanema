@@ -1,0 +1,47 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="title">Banners</div>
+  <div id="vitrine">
+     <ul class="tabela3">
+      <?php foreach($this->banners as $banner) : ?>
+      <li>
+        <div id="image-banner"><a class="fancybox" href="<?php echo $this->baseUrl('/uploads/images/banner/' . $banner->image); ?>" data-fancybox-group="gallery"><img src="<?php echo $this->baseUrl('/uploads/images/banner/' . $banner->image); ?>" width="340" height="119" border="0" /></a></div>
+        <div id="actions-banner"><a href="<?php echo $this->baseUrl('/admin/banner/remove/' . $banner->idbanner); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Excluir" /></a></div>
+      </li>
+      <?php endforeach; ?>
+          
+    </ul>
+  </div>
+  <div id="title">&Uacute;ltimas not&iacute;cias</div>
+  <div id="vitrine2">
+   <table width="1056" border="0" cellpadding="7" cellspacing="4">
+    <tr>
+      <td width="96" class="label">Imagem</td>
+      <td width="538"><span class="label">Not&iacute;cia</span></td>
+      <td width="65"><span class="label">Data</span></td>
+      <td width="75"><span class="label">A&ccedil;&otilde;es</span></td>
+    </tr>
+    <?php 
+    $ctrl = true;
+    $color = 'bgcolor="#FFFFFF"';
+    foreach($this->news as $news) :
+    	$colored = ($ctrl) ? $color : '';  
+    ?>
+    <tr <?=$colored;?>>
+      <td><img src="<?php echo $this->baseUrl('uploads/images/news/' . $news->image); ?>" width="90" height="90" /></td>
+      <td height="90"><h3 class="info"><?php echo $news->title; ?><br />
+        <br />
+        <?php echo substr($this->stripTags($news->content),0,300) . '...'; ?></h3></td>
+      <td class="info"><?php echo $this->date($news->date); ?></td>
+      <td><a href="<?php echo $this->baseUrl('/admin/news/edit/' . $news->idnews); ?>"><img src="<?php $this->asset('edit-icon.png','imagens'); ?>" width="20" height="20" border="0" title="Editar" /></a> <a href="<?php echo $this->baseUrl('/admin/news/remove/' . $news->idnews); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Excluir" /></a></td>
+    </tr>
+    <?php 
+    	$ctrl = ($ctrl) ? false : true;
+    endforeach;
+    ?>
+  </table>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

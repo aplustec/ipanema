@@ -1,0 +1,39 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Cadastrar novo banner</div>
+  <div id="formulario">
+    <br />
+    <form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+    <table width="817" border="0">
+      <tr>
+        <td height="30" valign="bottom"><span class="label">Imagem da banner</span></td>
+      </tr>
+      <tr>
+        <td><input name="image" type="file" id="image1" />
+        <label><em><span class="info">(775x260 px - JPG)</span></em></label></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">URL destino</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="link"></label><input name="url" type="text" class="input" id="link" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom">&nbsp;</td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Cadastrar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>  
+  
+    
+</div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

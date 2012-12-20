@@ -1,0 +1,74 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content4">
+      <div id="block-content4">
+       <h2><?php echo $this->course->name; ?></h2>
+       <span class="type">Graduação</span>
+       <h3><br />
+        <?php echo $this->course->description; ?>
+        <br />
+        <br />
+        <span class="subtitlte">Média de remuneração para profissional recém-formado:
+        </span><br />
+        Em empresa de grande porte - <?php echo $this->course->remuneration_bigenterprise; ?>
+        <br />
+        Em empresa de pequeno porte - <?php echo $this->course->remuneration_middleenterprise; ?>
+
+        <br />
+        <br />
+        <span class="subtitlte">Per&iacute;odo:</span> <?php echo $this->course->period; ?><br />
+        <span class="subtitlte">Duração do curso:</span> <?php echo $this->course->duration; ?>
+        <br />
+        <span class="subtitlte">Vagas</span>: <?php echo $this->course->vacancies?> </h3>
+    <span class="subtitlte"><br />
+    Grade Curricular </span><br />
+    <br />
+    <?php
+   	for($i=1;$i<=4;$i++) :
+   		$module = $this->modules->current();
+   		$components = $this->getComponentsOfModule($module->idmodule); 
+    ?>
+    <table width="750" border="0">
+      <tr>
+        <td height="35" colspan="4" bgcolor="#F3FCFE" class="detail-componentes"><?php echo $module->name; ?></td>
+        </tr>
+      <tr>
+        <td width="96" height="30" align="center" bgcolor="#0E809C" class="componentes">M&oacute;dulo</td>
+        <td width="372" bgcolor="#0E809C" class="componentes">Componentes Curriculares</td>
+        <td width="133" align="center" bgcolor="#0E809C" class="componentes">Carga Hor&aacute;ria Semanal</td>
+        <td width="131" align="center" bgcolor="#0E809C" class="componentes">Carga Hor&aacute;ria Semestral</td>
+      </tr>
+      <?php 
+      foreach($components as $component) :
+      	if($component->name != '') :  
+      ?>
+      <tr>
+        <td height="30" align="center" bgcolor="#F3FCFE"><span class="detail-componentes"><?php echo $this->inRoman($i); ?></span></td>
+        <td bgcolor="#F3FCFE"><span class="detail-componentes"><?php echo $component->name; ?></span></td>
+        <td align="center" bgcolor="#F3FCFE"><span class="detail-componentes"><?php echo $component->weekly_workload; ?></span></td>
+        <td align="center" bgcolor="#F3FCFE"><span class="detail-componentes"><?php echo $component->semester_hours; ?></span></td>
+      </tr>
+      <?php
+      	endif;  
+      endforeach; 
+      ?>
+      <tr>
+        <td height="30" align="center" bgcolor="#0E809C" class="componentes">Total</td>
+        <td>&nbsp;</td>
+        <td align="center" class="detail-componentes"><strong><?php echo $module->weekly_workload; ?></strong></td>
+        <td align="center" class="detail-componentes"><strong><?php echo $module->semester_hours; ?></strong></td>
+      </tr>
+    </table>
+      <br />
+    <?php
+    	$this->modules->next();  
+    endfor; 
+    ?>
+      </div>
+    
+    <?php echo $this->render('course/sidebar.phtml'); ?>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

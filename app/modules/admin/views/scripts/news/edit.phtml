@@ -1,0 +1,43 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Editar not&iacute;cia</div>
+  <div id="formulario">
+    <br />
+    <form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+    <table width="817" border="0">
+      <tr>
+        <td height="30" valign="bottom"><span class="label">T&iacute;tulo da not&iacute;cia</span></td>
+      </tr>
+      <tr>
+        <td><label for="titulo"></label><input name="title" type="text" class="input" id="titulo" value="<?php echo $this->news->title; ?>" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">Texto</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="texto"></label>
+          <textarea name="content" cols="45" rows="5" class="area" id="texto"><?php echo $this->news->content; ?></textarea></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><span class="label">Imagem da not&iacute;cia</span></td>
+      </tr>
+      <tr>
+        <td><input name="image" type="file" id="image1" />
+          <label><em><span class="info">(280 x 280px - JPG)</span></em></label></td>
+      </tr>
+      <tr>
+        <td height="45"><img src="<?php echo $this->baseUrl('uploads/images/news/' . $this->news->image); ?>" width="141" height="141" /></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Atualizar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>  
+  
+    
+</div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

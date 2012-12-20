@@ -1,0 +1,417 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-attachment: fixed;
+	background-image: url(../imagens/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+h1 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 28px;
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	color: #0E809C;
+	margin-top: 0px;
+	font-weight: normal;
+}
+h2 {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 45px;
+	line-height: 40px;
+	color: #12A3C7;
+	margin-top: 32px;
+	font-weight: normal;
+	margin-bottom: 32px;
+}
+h3 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	line-height: 22px;
+	color: #666;
+	margin-top: 0px;
+	font-weight: normal;
+}
+
+
+
+
+
+#container-header {
+	height: 137px;
+	width: 100%;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #35B4D5;
+	background-color: #0E809C;
+}
+#header {
+	height: 137px;
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#content {
+	height: 650px;
+	width: 100%;
+}
+#content2 {
+	height: 815px;
+	width: 100%;
+}
+#content3 {
+	height: 1750px;
+	width: 100%;
+}
+#content5 {
+	height: 1275px;
+	width: 100%;
+}
+
+#content4 {
+	height: 2200px;
+	width: 100%;
+}
+
+
+
+
+
+#container {
+	height: auto;
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#container-noticia {
+	height: auto;
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 32px;
+}
+
+#col-left {
+	height: 650px;
+	width: 230px;
+	margin-right: 8px;
+	float: left;
+}
+#sidebar {
+	height: 650px;
+	width: 250px;
+	float: left;
+	margin-left: 8px;
+}
+#block-content1 {
+	height: 650px;
+	width: 750px;
+	float: left;
+	margin-right: 15px;
+}
+#block-content2 {
+	height: 815px;
+	width: 750px;
+	float: left;
+	margin-right: 15px;
+}
+#block-content3 {
+	height: 1745px;
+	width: 750px;
+	float: left;
+	margin-right: 15px;
+}
+#block-content5 {
+	height: 1270px;
+	width: 750px;
+	float: left;
+	margin-right: 15px;
+}
+
+#block-content4 {
+	height: 2150px;
+	width: 750px;
+	float: left;
+	margin-right: 15px;
+}
+
+
+
+
+#col-right {
+	height: 650px;
+	width: 775px;
+	float: left;
+	margin-left: 8px;
+}
+
+#mini-cursos {
+	height: 114px;
+	width: 100%;
+	margin-top: 16px;
+	background-image: url(../imagens/cursos.png);
+}
+
+#mini-banner {
+	height: 85px;
+	width: 100%;
+	margin-top: 16px;
+}
+#content-sidebar {
+	min-height: 155px;
+	height: auto;
+	width: 100%;
+	margin-top: 35px;
+	background-color: #F9F9F9;
+	border: 1px solid #E5E5E5;
+}
+
+
+#banner {
+	height: 260px;
+	width: 775px;
+	margin-top: 16px;
+}
+#content-bottom {
+	height: 345px;
+	width: 775px;
+	margin-top: 16px;
+}
+#col-midia {
+	float: left;
+	height: 345px;
+	width: 465px;
+	margin-right: 8px;
+}
+#col-news {
+	float: left;
+	height: 345px;
+	width: 290px;
+	margin-left: 8px;
+}
+#chamada-video {
+	height: 135px;
+	width: 100%;
+}
+#chamada-galeria {
+	height: 135px;
+	width: 100%;
+	margin-top: 14px;
+}
+
+
+
+#video-chamada {
+	float: left;
+	height: 130px;
+	width: 180px;
+	margin-right: 8px;
+}
+
+#desc-video {
+	float: left;
+	height: 130px;
+	width: 275px;
+}
+
+
+#galeria-chamada {
+	float: left;
+	height: 85px;
+	width: 85px;
+	margin-right: 5px;
+	margin-top: 8px;
+}
+
+
+#desc-galeria {
+	float: left;
+	height: 85px;
+	width: 134px;
+	margin-top: 8px;
+	margin-right: 8px;
+}
+
+
+#noticias {
+	height: 75px;
+	width: 100%;
+	margin-top: 10px;
+}
+
+#thumb-news {
+	float: left;
+	height: 75px;
+	width: 75px;
+	margin-right: 5px;
+}
+
+#desc-news {
+	float: left;
+	height: 75px;
+	width: 200px;
+	margin-left: 5px;
+}
+#container-footer {
+	height: 250px;
+	width: 100%;
+	background-image: url(../imagens/bg-footer.png);
+	background-repeat: repeat-x;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #35B4D5;
+}
+#footer {
+	height: 250px;
+	width: 1024px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#logo {
+	float: left;
+	height: 120px;
+	width: 202px;
+	margin-top: 7px;
+}
+#detail-header {
+	float: left;
+	height: 120px;
+	width: 800px;
+	margin-top: 7px;
+	margin-left: 16px;
+}
+#social {
+	height: 55px;
+	width: 100%;
+}
+#naveg {
+	height: 55px;
+	width: 100%;
+}
+#ipanema {
+	float: left;
+	height: 240px;
+	width: 125px;
+	margin-right: 15px;
+	background-image: url(../imagens/filt.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#grad {
+	float: left;
+	height: 240px;
+	width: 185px;
+	margin-right: 15px;
+	background-image: url(../imagens/filt.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+#pos-grad {
+	float: left;
+	height: 240px;
+	width: 235px;
+}
+#footer-detail {
+	float: left;
+	height: 240px;
+	width: 375px;
+	margin-left: 70px;
+	background-image: url(../imagens/logo-footer.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+}
+
+#title-footer {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #A4E6F7;
+	display: block;
+	height: 25px;
+	width: 100%;
+	line-height: 25px;
+	margin-top: 9px;
+}
+#title-sidebar
+ {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #0E809C;
+	display: block;
+	height: 25px;
+	width: 200px;
+	line-height: 25px;
+	margin-top: 13px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#title-sidcurso {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #0E809C;
+	display: block;
+	height: 25px;
+	width: 240px;
+	line-height: 25px;
+	margin-top: 13px;
+	margin-right: auto;
+	margin-left: auto;
+}
+#title-phone {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 23px;
+	font-weight: bold;
+	color: #0E809C;
+	display: block;
+	height: 35px;
+	width: 240px;
+	line-height: 35px;
+	margin-top: 13px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
+#barra {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 27px;
+	font-weight: normal;
+	color: #FFF;
+	display: block;
+	height: 45px;
+	width: 240px;
+	line-height: 45px;
+	background-color: #0E809C;
+	padding-left: 7px;
+	text-align: center;
+}
+
+
+#paginacao {
+	height: 25px;
+	width: 745px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	color: #666;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+	margin-top: 10px;
+}
+#video {
+	float: left;
+	height: 130px;
+	width: 195px;
+}
+#descricao-video {
+	float: left;
+	height: 130px;
+	width: 510px;
+	margin-left: 13px;
+}

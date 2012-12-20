@@ -1,0 +1,50 @@
+<?php echo $this->render('header.phtml'); ?>
+<div id="container">
+  <div id="content2">
+      <div id="block-content2">
+       <h2>O que &eacute; o FIES?</h2>
+       <h3>O Fundo de Financiamento Estudantil(Fies) é um programa do Ministério da Educação destinado a financiar a graduação na educação superior de estudantes matriculados em instituições não gratuitas. Podem recorrer ao financiamento os estudantes matriculados em cursos superiores que tenham avaliação positiva nos processos conduzidos pelo Ministério da Educação.<br />
+       <br />
+Em 2010 o FIES passou a funcionar em um novo formato. O Fundo Nacional de Desenvolvimento da Educação (FNDE) passou a ser o Agente Operador do Programa e os juros caíram para 3,4% ao ano. Além disso, passou a ser permitido ao estudante solicitar o financiamento em qualquer período do ano.
+<br />
+ <br />
+ Com as novas regras, você pode se inscrever a qualquer momento, via internet, e as parcelas serão mensais e com valores fixos.  O novo FIES garante crédito para alunos com prestações atrasadas e período de pagamento de até três vezes a duração do curso, mais 12 meses.</h3>
+       <span class="subtitlte">O FINANCIAMENTO</span><br />
+ <h3>O Fundo de Financiamento ao Estudante do Ensino Superior (FIES) é um programa do Ministério da Educação destinado a financiar a graduação na educação superior em instituições não gratuitas.</h3>
+ <span class="subtitlte">A QUEM SE DESTINA?</span><br />
+ <h3>Estudantes regularmente matriculados em cursos de graduação não gratuitos que tenham obtido avaliação positiva no Sistema Nacional de Avaliação da Educação Superior (SINAES) e que seja oferecido por instituição de ensino superior participante do Programa.</h3>
+ <span class="subtitlte">BENEFÍCIOS</span>
+<h3> - Financie até 100% das mensalidades do curso selecionado.
+  <br />
+ - Taxa de juros de 3,4% ao ano.
+ <br />
+ - Parcelas mensais e com valores fixos. 
+ <br />
+ - Parcela máxima de apenas R$ 50,00 por trimestre durante a duração do curso e da carência. (18 meses de carência após o final do período de financiamento).
+ <br />
+ - Período de pagamento de até 3 vezes a duração do curso mais 12 meses.
+ <br />
+ - Garantia pode ser feita por fiança tradicional ou fiança solidária.
+ <br />
+ - Solicitação do financiamento em qualquer período do ano.
+ <br />
+ - Inscrições para o programa exclusivamente pela <a href="http://sisfiesportal.mec.gov.br/index.html" target="_blank" class="linka">internet</a>.</h3>
+    </div>
+    <div id="sidebar">
+      <div id="content-sidebar">
+       <div id="title-sidebar">A Ipanema</div>
+           <ul class="menusid">
+            <li><a href="<?php echo $this->baseUrl('/conheca'); ?>" title="Conheça a Ipanema">Conheça a Ipanema</a></li>
+            <li><a href="<?php echo $this->baseUrl('/estrutura'); ?>" title="Estrutura">Estrutura</a></li>
+            <li><a href="<?php echo $this->baseUrl('/comoingressar'); ?>" title="Como Ingressar">Como Ingressar</a></li>
+            <li><a href="<?php echo $this->baseUrl('/noticias'); ?>" title="Notícias">Notícias</a></li>
+           </ul>
+      </div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas2.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>"><img src="<?php $this->asset('empreendedor2.png','imagens'); ?>" border="0" title="Empreendedor Pearson" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies2.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

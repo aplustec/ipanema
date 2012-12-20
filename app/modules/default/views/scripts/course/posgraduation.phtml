@@ -1,0 +1,57 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content3">
+      <div id="block-content3">
+       <h2><?php echo $this->course->name; ?></h2>
+       <span class="type">P&oacute;s-Graduação</span>
+       <h3><br />
+         <span class="subtitlte">Objetivos:</span><br />
+         <?php echo $this->course->objective; ?>
+         <br />
+         <br />
+         <span class="subtitlte">Área de Atuação:
+         </span><br />
+         <?php echo $this->course->area; ?>
+
+         <br />
+         <br />
+         <span class="subtitlte">Público Alvo:
+         </span><br />
+         <?php echo $this->course->public; ?>
+
+<br />
+<br />
+<span class="subtitlte">Metodologia: </span><br />
+<?php echo $this->course->metodology; 	?>
+
+<br />
+<br />
+<span class="subtitlte">Avaliação:</span><br />
+<?php echo $this->course->avaliation; ?></h3>
+       <br />
+       <table width="741" border="0">
+         <tr>
+    <td height="35" bgcolor="#0E809C" class="componentes">Componentes Curriculares</td>
+  </tr>
+  <?php 
+  foreach($this->components as $component):
+  	if($component->name != '') :  
+  ?>
+  <tr>
+    <td height="30" bgcolor="#F3FCFE"><span class="detail-componentes"><?php echo $component->name; ?></span></td>
+  </tr>
+  <?php
+  	endif;  
+  endforeach; 
+  ?>
+  <tr>
+    <td height="30" bgcolor="#0E809C" class="componentes">TOTAL: <?php echo $this->course->workload; ?></td>
+  </tr>
+       </table>
+    </div>
+    <?php echo $this->render('course/sidebar.phtml'); ?>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

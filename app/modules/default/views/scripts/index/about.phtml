@@ -1,0 +1,40 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content">
+      <div id="block-content1">
+       <h2>Conhe&ccedil;a a Ipanema</h2>
+       <h3>         
+         Na Faculdade Ipanema, o objetivo não é preparar o aluno para ingressar no mercado de trabalho, é preparar para assumir postos de liderança, se destacar na sua área de atuação e provocar as transformações no mundo moderno. E como isso é feito? Com diferenciais em cada detalhe.
+
+<br />
+<br />
+Você já viu professores enviarem material das aulas por e-mail, mas na Faculdade Ipanema os professores são livres para repassar aos alunos conteúdos pelas redes sociais.
+
+<br />
+<br />
+Ao escolher a Faculdade Ipanema, você estará escolhendo ter aulas diferentes: in loco, aulas abertas / públicas, debates, visitas guiadas, cinema comentado. Porque todo lugar é lugar de aprendizado.
+
+<br />
+<br />
+E tudo isso, no mesmo tempo de um bacharelado, combinando graduação tecnológica com pós-graduação ou MBA para formar um novo conceito de ensino – a Graduação Executiva.</h3>
+
+    </div>
+    <div id="sidebar">
+      <div id="content-sidebar">
+       <div id="title-sidebar">A Ipanema</div>
+           <ul class="menusid">
+            <li><a href="<?php echo $this->baseUrl('/conheca'); ?>" title="Conheça a Ipanema">Conheça a Ipanema</a></li>
+            <li><a href="<?php echo $this->baseUrl('/estrutura'); ?>" title="Estrutura">Estrutura</a></li>
+            <li><a href="<?php echo $this->baseUrl('/comoingressar'); ?>" title="Como Ingressar">Como Ingressar</a></li>
+            <li><a href="<?php echo $this->baseUrl('/noticias'); ?>" title="Notícias">Notícias</a></li>
+           </ul>
+      </div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas2.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>"><img src="<?php $this->asset('empreendedor2.png','imagens'); ?>" border="0" title="Empreendedor Pearson" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies2.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

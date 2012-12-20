@@ -1,0 +1,131 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Cadastrar Curso Gradua&ccedil;&atilde;o</div>
+  <div id="formulario">
+    <br />
+    <form id="form1" name="form1" method="post" action="">
+    <table width="1005" border="0">
+      <tr>
+        <td height="30" colspan="3" valign="bottom"><span class="label">Nome do curso</span></td>
+      </tr>
+      <tr>
+        <td colspan="3"><label for="titulo"></label><input name="name" type="text" class="input" id="titulo" /></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom" class="label">Descri&ccedil;&atilde;o do curso</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom"><label for="texto"></label>
+          <textarea name="description" cols="45" rows="5" class="area2" id="texto"></textarea></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom"><span class="label">M&Eacute;DIA DE REMUNERA&Ccedil;&Atilde;O PARA PROFISSIONAL REC&Eacute;M-FORMADO</span></td>
+      </tr>
+      <tr>
+        <td colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom" class="label">Empresa de grande porte</td>
+      </tr>
+      <tr>
+        <td colspan="3"><label for="grande-porte"></label>
+          <input name="bigenterprise" type="text" class="input2" id="grande-porte" /></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom" class="label">Empresa de pequeno porte</td>
+      </tr>
+      <tr>
+        <td colspan="3"><label for="pequeno-porte"></label>
+          <input name="middleenterprise" type="text" class="input2" id="pequeno-porte" /></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom" class="label">Per&iacute;odo</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3"><label for="periodo"></label>
+          <input name="period" type="text" class="input2" id="periodo" /></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom" class="label">Dura&ccedil;&atilde;o do curso</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3"><label for="duracao"></label>
+          <input name="duration" type="text" class="input2" id="duracao" /></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" valign="bottom" class="label">Vagas</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3"><label for="vagas"></label>
+          <input name="vacancies" type="text" class="input2" id="vagas" /></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="45" colspan="3" class="label">GRADE CURRICULAR</td>
+      </tr>
+      
+      <?php for($i=1;$i<=$this->modules;$i++) : ?>
+      <tr>
+        <td height="30" colspan="3" class="label">M&oacute;dulo <?php echo $this->inRoman($i); ?></td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3" class="label">Nome</td>
+      </tr>
+      <tr>
+        <td height="30" colspan="3"><label for="nomemod"></label>
+          <input name="module_<?=$i;?>_name" type="text" class="input" id="nomemod" /></td>
+      </tr>
+      <tr>
+        <td width="476" height="30" class="label">Componentes</td>
+        <td width="159" class="label">Carga Hor. Semanal</td>
+        <td width="265" class="label">Carga Hor Semestral</td>
+      </tr>
+      <?php for($j=1;$j<=$this->components;$j++) : ?>
+      <tr>
+        <td height="30"><label for="comp"></label>
+          <input name="module_<?=$i;?>_component_<?=$j;?>_name" type="text" class="input" id="comp" /></td>
+        <td height="30"><label for="cargasn"></label>
+          <input name="module_<?=$i;?>_component_<?=$j;?>_weekly_workload" type="text" class="input2" id="cargasn" /></td>
+        <td height="30"><input name="module_<?=$i;?>_component_<?=$j;?>_semester_hours" type="text" class="input2" id="cargasn10" /></td>
+      </tr>
+      <?php endfor; ?>
+      <tr>
+        <td height="30" align="right" class="label">Total</td>
+        <td height="30"><input name="module_<?=$i;?>_weekly_workload" type="text" class="input2" id="cargasn19" /></td>
+        <td height="30"><input name="module_<?=$i;?>_semester_hours" type="text" class="input2" id="cargasn20" /></td>
+      </tr>
+      <tr>
+        <td height="30">&nbsp;</td>
+        <td height="30">&nbsp;</td>
+        <td height="30">&nbsp;</td>
+      </tr>
+      <?php endfor;?>
+      
+      <tr>
+        <td height="30">&nbsp;</td>
+        <td height="30">&nbsp;</td>
+        <td height="30">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="30">&nbsp;</td>
+        <td height="30">&nbsp;</td>
+        <td height="30">&nbsp;</td>
+      </tr>
+      <tr>
+        <td height="45" colspan="3"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Cadastrar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>  
+  
+    
+</div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

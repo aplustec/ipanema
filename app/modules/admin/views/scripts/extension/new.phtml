@@ -1,0 +1,33 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Cadastrar novo curso</div>
+  <div id="formulario">
+    <br />
+    <form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+    <table width="817" border="0">
+      <tr>
+        <td height="30" valign="bottom"><span class="label">Nome do curso</span></td>
+      </tr>
+      <tr>
+        <td><label for="titulo"></label><input name="name" type="text" class="input" id="titulo" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">Descrição</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="texto"></label>
+          <textarea name="description" cols="45" rows="5" class="area" id="texto"></textarea></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Cadastrar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>  
+  
+    
+</div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

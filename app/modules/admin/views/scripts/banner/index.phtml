@@ -1,0 +1,20 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Banner</div>
+  <div id="ordenacao"><a href="<?php echo $this->baseUrl('/admin/banner/new'); ?>" class="anunciante"><strong>+ novo banner </strong></a></div>
+<div id="formulario">
+ <ul class="tabela3">
+ 	<?php foreach($this->banners as $banner) : ?>
+ 	<li>
+ 		<div id="image-banner"><a class="fancybox" href="<?php echo $this->baseUrl('/uploads/images/banner/' . $banner->image); ?>" data-fancybox-group="gallery"><img src="<?php echo $this->baseUrl('/uploads/images/banner/' . $banner->image); ?>" width="340" height="119" border="0" /></a></div>
+ 		<div id="actions-banner"><a href="<?php echo $this->baseUrl('/admin/banner/remove/' . $banner->idbanner); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Excluir" /></a></div>
+ 	</li>
+ 	<?php endforeach; ?>
+          
+    </ul>
+
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

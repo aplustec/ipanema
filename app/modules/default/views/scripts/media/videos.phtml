@@ -1,0 +1,48 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content">
+      <div id="block-content1">
+        <h2>TV Ipanema</h2>
+         <ul class="menu1">
+	       <li class="current"><a href="<?php echo $this->baseUrl('/tvipanema'); ?>" title="Vídeos">Vídeos</a></li>
+		   <li><a href="<?php echo $this->baseUrl('/galeria'); ?>" title="Galeria de fotos">Galeria</a></li>
+         </ul><br /><br />
+    		<ul class="tabela4">
+      			<?php foreach($this->paginator as $video) : ?>
+      			<li>
+                <div id="video">
+                 <?php echo $this->convertIframeDimensions($video->iframe,640,360,195,130); ?>
+                </div>
+                <div id="descricao-video">
+                  <a href="<?php echo $this->baseUrl('/video/' . $video->idvideo); ?>" class="linkv"><?php echo $video->title; ?></a>
+                  <!-- <span class="data-not">03/11/12</span> -->
+                  <span class="desc-video"><?php echo substr($video->description,0,300) . '...'; ?></span></div> 
+               	</li>
+               	<?php endforeach; ?>
+
+      </ul>
+      <div id="paginacao">
+            <div id="tnt_pagination">
+			<?php echo $this->paginationcontrol($this->paginator,null,'media/video-pagination.phtml'); ?>
+			</div>
+       </div>
+      </div>
+    <div id="sidebar">
+       <div id="content-sidebar">
+       <div id="title-sidebar">A Ipanema</div>
+           <ul class="menusid">
+            <li><a href="<?php echo $this->baseUrl('/conheca'); ?>" title="Conheça a Ipanema">Conheça a Ipanema</a></li>
+            <li><a href="<?php echo $this->baseUrl('/estrutura'); ?>" title="Estrutura">Estrutura</a></li>
+            <li><a href="<?php echo $this->baseUrl('/comoingressar'); ?>" title="Como Ingressar">Como Ingressar</a></li>
+            <li><a href="<?php echo $this->baseUrl('/noticias'); ?>" title="Notícias">Notícias</a></li>
+           </ul>
+      </div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas2.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>"><img src="<?php $this->asset('empreendedor2.png','imagens'); ?>" border="0" title="Empreendedor Pearson" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies2.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

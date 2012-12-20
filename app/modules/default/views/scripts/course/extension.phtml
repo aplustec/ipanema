@@ -1,0 +1,17 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content4">
+      <div id="block-content4">
+       <h2><?php echo $this->course->name; ?></h2>
+       <span class="type">Graduação</span>
+       <h3><br />
+        <?php echo $this->course->description; ?>
+      </h3>
+      </div>
+    
+    <?php echo $this->render('course/sidebar.phtml'); ?>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

@@ -1,0 +1,11 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container-noticia">
+<h2>Not&iacute;cias</h2>
+<img src="<?php echo $this->baseUrl('/uploads/images/news/' . $this->news->image); ?>" width="350" height="350" class="img-news" /><span class="title-newsin"><?php echo $this->news->title; ?></span><br />
+<span class="data-news"><?php echo $this->date($this->news->date); ?></span>
+<h3><br />
+  <?php echo $this->news->content; ?></h3>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

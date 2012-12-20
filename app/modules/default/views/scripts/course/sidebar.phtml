@@ -1,0 +1,62 @@
+	<div id="sidebar">
+      <div id="content-sidebar">
+       <div id="barra">Cursos</div>
+       <div id="title-sidcurso">Gradua&ccedil;&atilde;o</div>
+           <ul class="menu4">
+           	<?php 
+           		foreach($this->graduationCourses as $course) :
+           		if(strlen($course->name) > 40)
+           		{
+           			$courseName = substr($course->name, 0, 37) . '...';
+           		} else
+           		{
+           			$courseName = $course->name; 
+           		}
+           	?>
+           	<li><a href="<?php echo $this->baseUrl('/graduacao/' . $course->idgraduation . ',,' . urlencode($course->name)); ?>" title="<?php echo $course->name; ?>"><?php echo $courseName; ?></a></li>
+           	<?php 
+           		endforeach; 
+           	?>
+           </ul>
+           
+           <div id="title-sidcurso">P&oacute;s-Gradua&ccedil;&atilde;o</div>
+           <ul class="menu4">
+           	<?php 
+           		foreach($this->posgraduationCourses as $course) :
+           		if(strlen($course->name) > 40)
+           		{
+           			$courseName = substr($course->name, 0, 37) . '...';
+           		} else
+           		{
+           			$courseName = $course->name;
+           		} 
+           	?>
+           	<li><a href="<?php echo $this->baseUrl('/posgraduacao/' . $course->idposgraduation . ',,' . urlencode($course->name)); ?>" title="<?php echo $course->name; ?>"><?php echo $courseName; ?></a></li>
+           	<?php 
+           		endforeach; 
+           	?>
+           </ul>
+           
+           <div id="title-sidcurso">Idiomas e Extens&atilde;o</div>
+           <ul class="menu4">
+            <li><a href="<?php echo $this->baseUrl('/curso/idiomas'); ?>" title="Speak Centro de Idiomas">Speak Centro de Idiomas</a></li>
+            <li><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>" title="Empreendedor Pearson">Empreendedor Pearson</a></li>
+            <?php 
+           		foreach($this->extensionCourses as $course) :
+           		if(strlen($course->name) > 40)
+           		{
+           			$courseName = substr($course->name, 0, 37) . '...';
+           		} else
+           		{
+           			$courseName = $course->name;
+           		} 
+           	?>
+           	<li><a href="<?php echo $this->baseUrl('/curso/extensao/' . $course->idcourse . ',,' . urlencode($course->name)); ?>" title="<?php echo $course->name; ?>"><?php echo $courseName; ?></a></li>
+           	<?php 
+           		endforeach; 
+           	?>
+           </ul>
+      </div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas2.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies2.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>

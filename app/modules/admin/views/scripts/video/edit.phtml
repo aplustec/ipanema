@@ -1,0 +1,47 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Editar v&iacute;deo</div>
+  <div id="formulario">
+      <form id="form1" name="form1" method="post" action="">
+    <table width="1019" border="0">
+      <tr>
+        <td height="30" valign="bottom" class="label">T&iacute;tulo do v&iacute;deo</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="titulo"></label>
+          <input name="title" type="text" class="input" id="titulo" value="<?php echo $this->video->title; ?>" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">Descri&ccedil;&atilde;o do v&iacute;deo</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="descricao"></label>
+          <textarea name="description" cols="45" rows="5" class="area2" id="descricao"><?php echo $this->video->description; ?></textarea> 
+          <em><span class="info"><strong>M&aacute;x 400 caracteres</strong></span></em></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><span class="label">Iframe</span></td>
+      </tr>
+      <tr>
+        <td><label for="iframe"></label>
+          <input name="iframe" type="text" class="input" id="iframe" value='<?php echo $this->video->iframe; ?>' />          <label><em><span class="info">(640 x 360px)</span></em></label></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Salvar" /></td>
+      </tr>
+      <tr>
+      	<td>&nbsp;</td>
+      </tr>
+      <tr>
+      	<td><?php echo $this->video->iframe; ?></td>
+      </tr>
+    </table>
+    <br />
+    </form>
+
+
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

@@ -1,0 +1,27 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">&Aacute;lbuns</div>
+  <div id="ordenacao"><a href="<?php echo $this->baseUrl('/admin/gallery/new'); ?>" class="anunciante"><strong>+ novo &aacute;lbum</strong></a></div>
+<div id="albuns">
+ <ul class="galeria">
+ 
+ 	<?php foreach($this->gallerys as $gallery) : ?>
+ 	<li>
+        <div id="image-galeria"><a href="<?php echo $this->baseUrl('/admin/gallery/edit/' . $gallery->idgallery); ?>"><img src="<?php echo $this->baseUrl('uploads/images/gallery/' . $this->getGalleryCover($gallery->idgallery)->image); ?>" width="226" height="150" border="0" title="Editar álbum" /></a></div>
+        <div id="detail-galeria"><?php echo $gallery->title; ?></div>
+        <div id="actions-galeria"><a href="<?php echo $this->baseUrl('/admin/gallery/edit/' . $gallery->idgallery); ?>"><img src="<?php $this->asset('edit-icon.png','imagens'); ?>" width="20" height="20" border="0" title="Editar álbum" /></a><a href="<?php echo $this->baseUrl('/admin/gallery/remove/' . $gallery->idgallery); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Excluir álbum" /></a></div>
+    </li>
+ 	<?php endforeach; ?>
+ 
+    </ul>
+
+  </div>
+  <div id="page">
+    <div id="tnt_pagination">
+		<?php echo $this->paginationcontrol($this->gallerys,null,'gallery/pagination.phtml'); ?>
+	</div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

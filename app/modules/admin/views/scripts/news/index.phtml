@@ -1,0 +1,66 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Not&iacute;cias</div>
+  <div id="ordenacao">
+
+      <table width="1030" border="0" align="right">
+        <tr>
+          <td width="824"><a href="<?php echo $this->baseUrl('/admin/news/new'); ?>" class="anunciante">+ nova not&iacute;cia</a></td>
+          <td width="92">&nbsp;</td>
+          <td width="100"></td>
+          
+        </tr>
+      </table>
+    
+  </div>
+<div id="vitrine3">
+  <table width="1056" border="0" cellpadding="7" cellspacing="4">
+    <tr>
+      <td width="96" class="label">&nbsp;</td>
+      <td width="538" class="label">&nbsp;</td>
+      <td width="65" class="label">&nbsp;</td>
+      <td width="75" class="label">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="label">Imagem</td>
+      <td><span class="label">Not&iacute;cia</span></td>
+      <td><span class="label">Data</span></td>
+      <td><span class="label">A&ccedil;&otilde;es</span></td>
+    </tr>
+    
+    <?php 
+    $ctrl = true;
+    $color = 'bgcolor="#FFFFFF"';
+    
+    foreach($this->paginator as $news) :
+    	$colored = ($ctrl) ? $color : ''; 
+    ?>
+    <tr <?=$colored;?>>
+    	<td><img src="<?php echo $this->baseUrl('/uploads/images/news/' . $news->image); ?>" width="90" height="90" /></td>
+    	<td height="90">
+    		<h3 class="info">
+    			<?php echo $news->title; ?><br /><br />
+    			<?php echo substr($this->stripTags($news->content),0,240) . '...'; ?>
+    		</h3>
+    	</td>
+    	<td class="info"><?php echo $this->date($news->date); ?></td>
+    	<td><a href="<?php echo $this->baseUrl('/admin/news/edit/' . $news->idnews); ?>"><img src="<?php $this->asset('edit-icon.png','imagens'); ?>" width="20" height="20" border="0" title="Editar" /></a> <a href="<?php echo $this->baseUrl('/admin/news/remove/' . $news->idnews); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Remover" /></a></td>
+    </tr>
+    <?php 
+    	$ctrl = ($ctrl) ? false : true;
+    endforeach;
+    ?>
+    
+  </table>
+</div>
+  <div id="page">
+    <div id="tnt_pagination">
+    
+    <?php echo $this->paginationcontrol($this->paginator,null,'news/pagination.phtml'); ?>
+    
+	</div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

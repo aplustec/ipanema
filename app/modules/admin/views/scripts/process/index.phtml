@@ -1,0 +1,62 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Processo seletivo</div>
+  <div id="formulario">
+      <form id="form1" name="form1" method="post" action="">
+    <table width="1019" border="0">
+      <tr>
+        <td height="30" valign="bottom" class="label">C&oacute;digo</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="codigo"></label>
+          <input name="code" type="text" class="input" id="codigo" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">R&oacute;tulo</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><input name="label" type="text" class="input" id="rotulo" /></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Salvar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>
+	
+	<div id="vitrine3">
+		<table width="653" border="0" cellpadding="7" cellspacing="4">
+    	<tr>
+    		<td width="123" class="label">&nbsp;</td>
+      		<td width="260" class="label">&nbsp;</td>
+      		<td width="75" class="label">&nbsp;</td>
+    	</tr>
+    	<tr>
+    		<td><span class="label">Codigo</span></td>
+    		<td><span class="label">Rótulo</span></td>
+      		<td><span class="label">A&ccedil;&otilde;es</span></td>
+    	</tr>
+    	
+    	<?php 
+    	$ctrl = true;
+    	$color = 'bgcolor="#FFFFFF"';
+    	foreach($this->process as $process) :
+    		$colored = ($ctrl) ? $color : ''; 
+    	?>
+    	<tr <?=$colored;?>>
+    		<td><h3 class="info"><?php echo $process->code; ?></h3></td>
+    		<td><h3 class="info"><?php echo $process->label; ?></h3></td>
+    		<td><a href="<?php echo $this->baseUrl('/admin/process/remove/' . $process->idprocess); ?>"><img src="<?php $this->asset('del.png','imagens'); ?>" width="25" height="20" border="0" title="Remover" /></a>
+    	</tr>
+    	<?php 
+    		$ctrl = ($ctrl) ? false : true;
+    	endforeach; 
+    	?>
+		</table>
+	</div>
+
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

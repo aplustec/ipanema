@@ -1,0 +1,100 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content">
+    <div id="col-left">
+      <div id="mini-cursos">
+        <form id="form1" name="form1" method="post" action="">
+         <table width="150" border="0" align="right">
+          <tr>
+            <td height="15">&nbsp;</td>
+          </tr>
+          <tr>
+            <td><label for="graduacao"></label>
+              <select name="graduacao" class="select-course" id="graduacao" onchange="goToUrl(this.value);">
+                <option>Gradua&ccedil;&atilde;o</option>
+                <?php foreach($this->graduationCourses as $course) : ?>
+                <option value="<?php echo $this->baseUrl('/graduacao/' . $course->idgraduation . ',,' . urlencode($course->name)); ?>"><?php echo $course->name; ?></option>
+                <?php endforeach; ?>
+              </select></td>
+          </tr>
+          <tr>
+            <td><label for="pos"></label>
+              <select name="pos" class="select-course" id="pos"  onchange="goToUrl(this.value);">
+                <option>P&oacute;s Gradua&ccedil;&atilde;o</option>
+                <?php foreach($this->posgraduationCourses as $course) : ?>
+                <option value="<?php echo $this->baseUrl('/graduacao/' . $course->idposgraduation . ',,' . urlencode($course->name)); ?>"><?php echo $course->name; ?></option>
+                <?php endforeach; ?>
+              </select></td>
+          </tr>
+          <tr>
+            <td height="25"><label for="extensao"></label>
+              <select name="jumpMenu" class="select-course" id="jumpMenu" onchange="goToUrl(this.value);">
+                <option>Idiomas e Extens&atilde;o</option>
+                <option value="<?php echo $this->baseUrl('/curso/idiomas'); ?>">Speak Centro de Idiomas</option>
+                <option value="<?php echo $this->baseUrl('/curso/empreendedor'); ?>">Empreendedor Pearson</option>
+                <?php foreach($this->extensionCourses as $course) : ?>
+                <option value="<?php echo $this->baseUrl('/curso/extensao/' . $course->idcourse . ',,' . urlencode($course->name)); ?>"><?php echo $course->name; ?></option>
+                <?php endforeach; ?>
+              </select>
+              </td>
+          </tr>
+        </table>
+        </form>
+      </div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/vestibular'); ?>"><img src="<?php $this->asset('vestibular.png','imagens'); ?>" border="0" title="Vestibular" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/comoingressar'); ?>"><img src="<?php $this->asset('ingressar.png','imagens'); ?>" border="0" title="Como ingressar" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>"><img src="<?php $this->asset('empreendedor.png','imagens'); ?>" border="0" title="Empreendedor Pearson" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>
+    <div id="col-right">
+      <div id="banner">
+      
+        <div id="slider-wrapper">
+         <div id="slider" class="nivoSlider">
+         	<?php foreach($this->banners as $banner) : ?>
+            <a href="<?php echo $banner->url; ?>"><img src="<?php echo $this->baseUrl('/uploads/images/banner/' . $banner->image); ?>"/></a>
+            <?php endforeach; ?>
+         </div>
+        </div>
+      
+      </div>
+      <div id="content-bottom">
+        <div id="col-midia">
+          <h1>TV Ipanema</h1>
+          <div id="chamada-video">
+            <div id="video-chamada">
+              <?php echo $this->convertIframeDimensions($this->video->iframe,640,360,180,130); ?>
+            </div>
+            <div id="desc-video"> <a href="<?php echo $this->baseUrl('/tvipanema'); ?>" class="categoria">V&iacute;deos</a> <span class="title"><?php echo $this->video->title; ?></span><br />
+              <a href="<?php echo $this->baseUrl('/video/' . $this->video->idvideo); ?>" class="chamada"><?php echo substr($this->video->description,0,150) . '...'; ?></a> <br />
+              <br />
+              <a href="<?php echo $this->baseUrl('/tvipanema'); ?>" class="more" title="Veja mais vídeos"><img src="<?php $this->asset('icon.png','imagens'); ?>" width="16" height="16" border="0" align="top" />&nbsp;&nbsp; Veja mais vídeos aqui</a> </div>
+          </div>
+          <div id="chamada-galeria"> 
+          	<a href="<?php echo $this->baseUrl('/galeria'); ?>" class="categoria">Galeria</a>
+          	<?php foreach($this->gallerys as $gallery) : ?>
+            <div id="galeria-chamada"><a href="<?php echo $this->baseUrl('/galeria/' . $gallery->idgallery); ?>"><img src="<?php echo $this->baseUrl('/uploads/images/gallery/' . $this->getGalleryCover($gallery->idgallery)); ?>" width="85" height="85" border="0" /></a></div>
+            <div id="desc-galeria"><a href="<?php echo $this->baseUrl('/galeria/' . $gallery->idgallery); ?>" class="chamada"><?php echo substr($gallery->description,0,100); ?></a></div>
+            <?php endforeach; ?>
+            <a href="<?php echo $this->baseUrl('/galeria'); ?>" class="more" title="Veja mais fotos"><img src="<?php $this->asset('icon.png','imagens'); ?>" width="16" height="16" border="0" align="top" />&nbsp;&nbsp; Veja mais fotos aqui</a> 
+          </div>
+        </div>
+        <div id="col-news">
+          <h1>Últimas notícias</h1>
+          <?php foreach($this->news as $news) : ?>
+          <div id="noticias">
+            <div id="thumb-news"><a href="<?php echo $this->baseUrl('/noticia/' . $news->idnews . ',,' . urlencode($news->title)); ?>"><img src="<?php echo $this->baseUrl('uploads/images/news/' . $news->image); ?>" width="75" height="75" border="0" /></a></div>
+            <div id="desc-news"> <!-- <span class="title-news"><?php echo $news->title; ?></span> --><br />
+              <a href="<?php echo $this->baseUrl('/noticia/' . $news->idnews . ',,' . urlencode($news->title)); ?>" class="chamada"><?php echo substr($this->stripTags($news->content),0,100) . '...'; ?></a></div>
+          </div>
+          <?php endforeach; ?>
+          <br />
+          <a href="<?php echo $this->baseUrl('/noticias'); ?>" class="more" title="Mais notícias"><img src="<?php $this->asset('icon.png','imagens'); ?>" width="16" height="16" border="0" align="top" />&nbsp;&nbsp; Veja mais not&iacute;cias aqui</a> </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

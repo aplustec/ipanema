@@ -1,0 +1,94 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content">
+      <div id="block-content1">
+       <h2>Fale Conosco</h2>
+       <h3>         
+        Preencha os campos abaixo e envie sua pergunta. Você também pode usar esse espaço para mandar comentários ou sugestões</h3>
+ <form id="form1" name="form1" method="post" action="">
+          <table width="700" border="0">
+    <tr>
+      <td height="20" valign="bottom" class="label">Nome</td>
+    </tr>
+    <tr>
+      <td><label for="nome"></label>
+        <span id="sprytextfield1">
+        <input name="name" type="text" class="input" id="nome" />
+        <span class="textfieldRequiredMsg">Campo obrigatório</span></span></td>
+    </tr>
+    <tr>
+      <td height="20" valign="bottom" class="label">Email</td>
+    </tr>
+    <tr>
+      <td><label for="email"></label>
+        <span id="sprytextfield2">
+        <input name="email" type="text" class="input" id="email" />
+        <span class="textfieldRequiredMsg">Campo Obrigatório</span><span class="textfieldInvalidFormatMsg">Formato inválido</span></span></td>
+    </tr>
+    <tr>
+      <td height="20" valign="bottom" class="label">Telefone</td>
+    </tr>
+    <tr>
+      <td><label for="fone"></label>
+        <span id="sprytextfield3">
+        <input name="phone" type="text" class="input" id="fone" />
+        <span class="textfieldRequiredMsg">Campo obrigatório</span><span class="textfieldInvalidFormatMsg">Formato inválido</span></span></td>
+    </tr>
+    <tr>
+      <td height="20" valign="bottom" class="label">Assunto</td>
+    </tr>
+    <tr>
+      <td height="25" valign="bottom" class="label"><span id="sprytextfield4">
+        <input name="subject" type="text" class="input" id="fone2" />
+        <span class="textfieldRequiredMsg">Campo obrigatório</span></span></td>
+    </tr>
+    <tr>
+      <td height="20" valign="bottom" class="label">&Aacute;rea</td>
+    </tr>
+    <tr>
+      <td height="25" valign="bottom" class="label"><span id="sprytextfield4">
+        <select name="area" id="area" class="selectcontact">
+        	<option>Selecione</option>
+        	<option value="1">Fale com o diretor</option>
+        	<option value="2">Trabalhe Conosco</option>
+        	<option value="3">Financeiro</option>
+        	<option value="4">Comercial</option>
+        	<option value="5">Acadêmico</option>
+        	<option value="6">Outros</option>
+        </select>
+        <span class="textfieldRequiredMsg">Campo obrigatório</span></span></td>
+    </tr>
+    <tr>
+      <td height="20" valign="bottom" class="label">Mensagem</td>
+    </tr>
+    <tr>
+      <td><label for="menssagem"></label>
+        <span id="sprytextarea1">
+        <textarea name="message" cols="45" rows="5" class="area" id="menssagem"></textarea>
+        <span class="textareaRequiredMsg">Campo obrigatório</span></span></td>
+    </tr>
+    <tr>
+      <td><input name="enviar" type="submit" class="bt" id="enviar" value="Enviar" /></td>
+    </tr>
+  </table>
+</form>
+    </div>
+    <div id="sidebar">
+      <div id="content-sidebar">
+    <div id="barra">Contato</div>
+       <div id="title-phone">(15) 3034-9400</div>
+       <span class="end">contato@faculdadeipanema.com.br<br />
+       <br />
+       Rua M&aacute;rio Campestrini, 100<br />
+       Parque Campolim, Sorocaba / SP<br />
+       <br />
+       </span></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas2.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>"><img src="<?php $this->asset('empreendedor2.png','imagens'); ?>" border="0" title="Empreendedor Pearson" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies2.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

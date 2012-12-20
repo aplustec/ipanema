@@ -1,0 +1,35 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container">
+  <div id="content">
+      <div id="block-content1">
+       <h2>Inscreva-se</h2>
+        <h3>Você já escolheu traçar o seu futuro com quem tem a inovação como essência, agora basta preencher o formulário abaixo para se inscrever no vestibular.</h3>
+        <form name="paginaCliente" class="form" id="vestibuForm" method="post" target="_blank" action="http://www.aspescola.com.br/asppreselecao/telas/inscricaoManutencao.jsp">
+        <input id="chave" name="chave" type="hidden" value="H4sIAAAAAAAAAFvzloG1hIHfycXA0MjIVD/YUd8IyAIAuGRUDhYAAAA=" />
+        <select name="cdProcessoSeletivoTipo" id="cdProcessoSeletivoTipo" class="form-select" onchange="sendForm();">
+        	<option>Selecione uma data</option>
+        	<?php foreach($this->process as $process) : ?>
+        	<option value="<?php echo $process->code; ?>"><?php echo $process->label; ?></option>
+        	<?php endforeach; ?>
+        </select>
+        </form>
+      </div>
+    <div id="sidebar">
+      <div id="content-sidebar">
+       <div id="title-sidebar">A Ipanema</div>
+           <ul class="menusid">
+            <li><a href="<?php echo $this->baseUrl('/conheca'); ?>" title="Conheça a Ipanema">Conheça a Ipanema</a></li>
+            <li><a href="<?php echo $this->baseUrl('/estrutura'); ?>" title="Estrutura">Estrutura</a></li>
+            <li><a href="<?php echo $this->baseUrl('/comoingressar'); ?>" title="Como Ingressar">Como Ingressar</a></li>
+            <li><a href="<?php echo $this->baseUrl('/noticias'); ?>" title="Notícias">Notícias</a></li>
+           </ul>
+      </div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/duvidas'); ?>"><img src="<?php $this->asset('duvidas2.png','imagens'); ?>" border="0" title="Dúvidas" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/curso/empreendedor'); ?>"><img src="<?php $this->asset('empreendedor2.png','imagens'); ?>" border="0" title="Empreendedor Pearson" /></a></div>
+      <div id="mini-banner"><a href="<?php echo $this->baseUrl('/fies'); ?>"><img src="<?php $this->asset('fies2.png','imagens'); ?>" border="0" title="FIES" /></a></div>
+    </div>
+  </div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>
