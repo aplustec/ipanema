@@ -28,7 +28,15 @@
 <br />
 <br />
 <span class="subtitlte">Avaliação:</span><br />
-<?php echo $this->course->avaliation; ?></h3>
+<?php echo $this->course->avaliation; ?>
+
+<?php if($this->course->price) : ?>
+<br />
+<br />
+<span class="subtitlte">Mensalidade: </span>R$ <?php echo $this->course->price; ?>
+<?php endif; ?>
+
+</h3>
        <br />
        <table width="741" border="0">
          <tr>

@@ -20,7 +20,12 @@
         <span class="subtitlte">Per&iacute;odo:</span> <?php echo $this->course->period; ?><br />
         <span class="subtitlte">Duração do curso:</span> <?php echo $this->course->duration; ?>
         <br />
-        <span class="subtitlte">Vagas</span>: <?php echo $this->course->vacancies?> </h3>
+        <span class="subtitlte">Vagas</span>: <?php echo $this->course->vacancies; ?> 
+        <?php if($this->course->price) : ?>
+        <br />
+        <span class="subtitlte">Mensalidade</span>: R$ <?php echo $this->course->price; ?> 
+        <?php endif; ?>
+        </h3>
     <span class="subtitlte"><br />
     Grade Curricular </span><br />
     <br />

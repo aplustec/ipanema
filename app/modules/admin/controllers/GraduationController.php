@@ -74,8 +74,9 @@ class Admin_GraduationController extends App_Modules_Admin_Abstract
 			$graduationPeriod = trim($filter->filter($this->_request->getPost('period')));
 			$graduationDuration = trim($filter->filter($this->_request->getPost('duration')));
 			$graduationVacancies = trim($filter->filter($this->_request->getPost('vacancies')));
+			$graduationPrice = trim($filter->filter($this->_request->getPost('price')));
 
-			$data = array('name'=>$graduationName,'description'=>$graduationDescription,'remuneration_bigenterprise'=>$graduationBigenterprise,'remuneration_middleenterprise'=>$graduationMiddleenterprise,'period'=>$graduationPeriod,'duration'=>$graduationDuration,'vacancies'=>$graduationVacancies);
+			$data = array('name'=>$graduationName,'description'=>$graduationDescription,'remuneration_bigenterprise'=>$graduationBigenterprise,'remuneration_middleenterprise'=>$graduationMiddleenterprise,'period'=>$graduationPeriod,'duration'=>$graduationDuration,'vacancies'=>$graduationVacancies,'price'=>$graduationPrice);
 			$result = $graduation->insert($data);
 			
 			if($result)
@@ -132,10 +133,11 @@ class Admin_GraduationController extends App_Modules_Admin_Abstract
 			$graduationPeriod = trim($filter->filter($this->_request->getPost('period')));
 			$graduationDuration = trim($filter->filter($this->_request->getPost('duration')));
 			$graduationVacancies = trim($filter->filter($this->_request->getPost('vacancies')));
+			$graduationPrice = trim($filter->filter($this->_request->getPost('price')));
 			
 			$idgraduation = (int)$this->_request->getParam('idgraduation');
 			
-			$data = array('name'=>$graduationName,'description'=>$graduationDescription,'remuneration_bigenterprise'=>$graduationBigenterprise,'remuneration_middleenterprise'=>$graduationMiddleenterprise,'period'=>$graduationPeriod,'duration'=>$graduationDuration,'vacancies'=>$graduationVacancies);
+			$data = array('name'=>$graduationName,'description'=>$graduationDescription,'remuneration_bigenterprise'=>$graduationBigenterprise,'remuneration_middleenterprise'=>$graduationMiddleenterprise,'period'=>$graduationPeriod,'duration'=>$graduationDuration,'vacancies'=>$graduationVacancies,'price'=>$graduationPrice);
 			$graduation->update($data, "`idgraduation`={$idgraduation}");
 
 			for($i=1;$i<=self::COUNT_MODULES;$i++)

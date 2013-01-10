@@ -67,8 +67,9 @@ class Admin_PosgraduationController extends App_Modules_Admin_Abstract
 			$metodology = trim($filter->filter($this->_request->getPost('metodology')));
 			$avaliation = trim($filter->filter($this->_request->getPost('avaliation')));
 			$workload = trim($filter->filter($this->_request->getPost('workload')));
+			$price = trim($filter->filter($this->_request->getPost('price')));
 			
-			$data = array('name'=>$name,'objective'=>$objective,'area'=>$area,'public'=>$public,'metodology'=>$metodology,'avaliation'=>$avaliation,'workload'=>$workload);
+			$data = array('name'=>$name,'objective'=>$objective,'area'=>$area,'public'=>$public,'metodology'=>$metodology,'avaliation'=>$avaliation,'workload'=>$workload,'price'=>$price);
 			$result = $pos->insert($data);
 			
 			if($result)
@@ -111,10 +112,11 @@ class Admin_PosgraduationController extends App_Modules_Admin_Abstract
 			$metodology = trim($filter->filter($this->_request->getPost('metodology')));
 			$avaliation = trim($filter->filter($this->_request->getPost('avaliation')));
 			$workload = trim($filter->filter($this->_request->getPost('workload')));
+			$price = trim($filter->filter($this->_request->getPost('price')));
 
 			$idposgraduation = (int)$this->_request->getParam('idposgraduation'); 
 			
-			$data = array('name'=>$name,'objective'=>$objective,'area'=>$area,'public'=>$public,'metodology'=>$metodology,'avaliation'=>$avaliation,'workload'=>$workload);
+			$data = array('name'=>$name,'objective'=>$objective,'area'=>$area,'public'=>$public,'metodology'=>$metodology,'avaliation'=>$avaliation,'workload'=>$workload,'price'=>$price);
 			$pos->update($data, "`idposgraduation`={$idposgraduation}");
 			
 			for($i=1;$i<=self::COUNT_COMPONENTS;$i++)
