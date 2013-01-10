@@ -1,0 +1,34 @@
+<?php echo $this->render('header.phtml'); ?>
+
+<div id="container2">
+  <div id="title">Editar duvida</div>
+  <div id="formulario">
+    <br />
+    <form id="form1" name="form1" method="post" action="" enctype="multipart/form-data">
+    <table width="817" border="0">
+      <tr>
+        <td height="30" valign="bottom"><span class="label">Pergunta</span></td>
+      </tr>
+      <?php //var_dump($this->doubts); exit(0); ?>
+      <tr>
+        <td><label for="titulo"></label><input name="question" type="text" class="input" id="titulo" value="<?php echo $this->doubts->question; ?>" /></td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom" class="label">Resposta</td>
+      </tr>
+      <tr>
+        <td height="30" valign="bottom"><label for="texto"></label>
+          <textarea name="answer" cols="45" rows="5" class="area2" id="texto"><?php echo $this->doubts->answer; ?></textarea></td>
+      </tr>
+      <tr>
+        <td height="45"><input name="cadastrar" type="submit" class="bt" id="cadastrar" value="Salvar" /></td>
+      </tr>
+    </table>
+    <br />
+    </form>  
+  
+    
+</div>
+</div>
+
+<?php echo $this->render('footer.phtml'); ?>

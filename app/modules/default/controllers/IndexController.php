@@ -114,6 +114,10 @@ class IndexController extends App_Modules_Default_Abstract
 			$this->_redirect('/duvidas');
 		} else
 		{
+			$doubts = new DoubtsDAO();
+			
+			$this->view->doubts = $doubts->fetchAll();
+			
 			$this->render();
 		}
 	}
